@@ -28,13 +28,15 @@ div.b {
 <h3 id="place-the-micro-services-in-fog-devices-so-that-the-maximum-response-time-taken-by-the-applications-is-minimized.">Place the micro-services in fog devices so that the maximum response time taken by the applications is minimized.</h3>
 
 <h2 id="challenges">Challenges</h2>
-
+The primary challenges of micro-service placement in fog computing are as follows:
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>As the fog uses in-network processing, all the fog devices have their primary workloads (e.g., routing for a network router), and the fog resource availability varies over time. Further, the secondary workload from the micro-services should not interfere with the primary workload of the fog devices.</li>
+  <li>Multiple micro-services can be placed simultaneously at the fog devices; therefore, the architecture requires micro-service isolation to ensure resource provisioning.</li>
+  <li>Based on the temporal nature of the primary workload, the architecture must support seamless migration of micro-services from one fog device to another to ensure application QoS.</li>
+  <li>The deployment framework and the micro-service migration framework must be lightweight so that
+it can cater to low latency IoT applications by deciding micro-service placement quickly.</li>
+  <li>The highly dynamic nature of the in-network processing architecture increases monitoring overhead, and maintaining consistency of the monitored statistics is difficult. The monitoring inconsistency leads to
+the performance degradation of the overall system.</li>
 </ul>
 
 <h2 id="proposed-solution">Proposed Solution</h2>
